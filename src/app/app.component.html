@@ -1,0 +1,13 @@
+<ng-container *ngIf="isAuthenticated(); else unauthenticated">
+  <app-side-nav-inner-toolbar title="{{appInfo.title}}">
+    <router-outlet></router-outlet>
+    <app-footer>
+      Copyright © 2024-{{appInfo.currentYear}} {{appInfo.title}} Inc.
+      <br />Todas as marcas comerciais ou marcas registradas são propriedade de seus respectivos proprietários.
+    </app-footer>
+  </app-side-nav-inner-toolbar>
+</ng-container>
+
+<ng-template #unauthenticated>
+  <app-unauthenticated-content></app-unauthenticated-content>
+</ng-template>
